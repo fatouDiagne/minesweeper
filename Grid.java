@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Grid extends JPanel {
 
-    private int bound = Game.GRIDSIZE * Game.GRIDSIZE;
+    private int nbGrid = Game.GRIDSIZE * Game.GRIDSIZE;
 
     private boolean picked = false;
 
@@ -20,9 +20,10 @@ public class Grid extends JPanel {
 
     public void createCells(Handler h) {
         // JFrame frame = new JFrame();
+       
         for (int i = 1; i <= Game.MINECOUNT; i++) {
             while (!picked) {
-                int minePosition = (int) (Math.random() * bound);
+                int minePosition = (int) (Math.random() * nbGrid);
                 if (!mines.contains(minePosition)) {
                     mines.add(minePosition);
                     picked = true;
@@ -31,7 +32,7 @@ public class Grid extends JPanel {
             picked = false;
         }
 
-        for (int i = 0; i < bound; i++) {
+        for (int i = 0; i < nbGrid; i++) {
             if (mines.contains(i)) {
                 cellGrid.add(new Cell(1, i, false, false, h));
             } else if (i % Game.GRIDSIZE == 0) {
@@ -77,16 +78,5 @@ public class Grid extends JPanel {
         }
     }
 
-    /*private void checkForWin() {
-        boolean won = true;
-        outer: for (int i = 0; i < bound; i++) {
-
-        }
-
-        /*if (won) {
-            JOptionPane.showMessageDialog(
-                    frame, "Vous avez gagné", "félicitations",
-                    JOptionPane.INFORMATION_MESSAGE);
-        }*/
-    //}
+    
 }

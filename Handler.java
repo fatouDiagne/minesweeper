@@ -136,10 +136,10 @@ public class Handler {
                     Grid.cellGrid.get(x).setText("");
                     if(Grid.cellGrid.get(x).getType() == 1) {Grid.cellGrid.get(x).setText("X");}
                 }
-                //cell.setText("*");
+                
                     
-                JOptionPane.showMessageDialog(null, "Vous avez perdu");
-                //Grid.cellGrid.get(x).setText(":)");
+                JOptionPane.showMessageDialog(null, "Vous avez clique sur un mine partie perdu");
+               
                 System.exit(0);
             }  
 
@@ -171,12 +171,10 @@ public class Handler {
                     } else {
                         Grid.cellGrid.get(x).setEnabled(false);
 
-                        /*JOptionPane.showMessageDialog(
-                    frame, "Vous avez gagné", "félicitations",
-                    JOptionPane.INFORMATION_MESSAGE*/
+                       
 
-                    JOptionPane.showMessageDialog(null, "Félicitations vous avez gagné");
-                        //Grid.cellGrid.get(x).setText(":)");
+                    JOptionPane.showMessageDialog(null, "Felicitations vous avez gagne");
+                        
                         System.exit(0);
                     }
                 }

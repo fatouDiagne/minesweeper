@@ -35,7 +35,7 @@ public class Cell extends JButton {
     }
 
     public int getType() {
-        // TYPES -- 0: Empty, 1: Mine, 2: Number
+        //type des cases 
         return type;
     }
 
